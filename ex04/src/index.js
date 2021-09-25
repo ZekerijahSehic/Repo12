@@ -1,18 +1,19 @@
 // Only change code below this list
 function sumFibonacci(num){
-    var fibSeq = [1, 1];
-    var sumOfOddFibNum = 2;
-    var counter = fibSeq[fibSeq.length - 2] + fibSeq[fibSeq.length - 1];
-
-    while (counter <= num) {
-        fibSeq.push(counter);
-
-        if(counter%2 != 0 ) { sumOfOddFibNum += counter;}
-
-
-        counter = fibSeq[fibSeq.length - 2] + fibSeq[fibSeq.length - 1];
+    var pre = 0;
+    var cur = 1;
+    var sum = 0;
+    while(cur <= num){
+        if (num === 1) {
+            sum = 1;
+        }
+        else if (cur % 2 !== 0) {
+            sum += cur;
+        }
+        cur += pre;
+        pre = cur - pre;
     }
-    return sumOfOddFibNum;
+    return sum;
 }
 // Only change code above this list
 
