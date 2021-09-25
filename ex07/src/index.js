@@ -39,7 +39,7 @@ function updateRecords(object, id, prop, value) {
     } else if (prop === "tracks" && value !== "") {
         data[id].tracks.push(value);
     } else if (value === "") {
-        delete data[id].prop;
+        delete data[id][prop];
     }
     return data;
     // Only change code above this line
